@@ -11,4 +11,5 @@ public class UserJPA extends User {
 	
 	public UserJPA() {
 	}
+	
 }

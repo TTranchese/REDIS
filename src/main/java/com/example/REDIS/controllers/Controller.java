@@ -25,7 +25,7 @@ public class Controller {
 		return userService.updateUser(user);
 	}
 	@DeleteMapping("/{id}")
-	public UserJPA del(@PathVariable Long id){
-		return userService.deleteUser(userService.readUser(id));
+	public void del(@PathVariable Long id){
+		userService.deleteUser(id);
 	}
 }
