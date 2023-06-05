@@ -1,25 +1,25 @@
 package com.example.REDIS.services;
 
-import com.example.REDIS.entities.User;
-import com.example.REDIS.repositories.UserRepository;
+import com.example.REDIS.entities.UserJPA;
+import com.example.REDIS.repositories.jpa.UserJPARepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Service
 public class UserService {
 	@Autowired
-	private UserRepository userRepository;
+	private UserJPARepository userJPARepository;
 	
-	public User createUser(User user){
-		return userRepository.saveAndFlush(user);
+	public UserJPA createUser(UserJPA user){
+		return userJPARepository.saveAndFlush(user);
 	}
-	public User readUser(int id){
-		return userRepository.findById(id).get();
+	public UserJPA readUser(Long id){
+		return userJPARepository.findById(id).get();
 	}
-	public User updateUser(User user){
-		return userRepository.saveAndFlush(user);
+	public UserJPA updateUser(UserJPA user){
+		return userJPARepository.saveAndFlush(user);
 	}
-	public User deleteUser(User user){
-		userRepository.delete(user);
+	public UserJPA deleteUser(UserJPA user){
+		userJPARepository.delete(user);
 		return user;
 	}
 }
