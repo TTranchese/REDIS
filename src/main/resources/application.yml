@@ -5,6 +5,5 @@ spring:
     password: root
   jpa:
     database: mysql
-    show-sql: true
     hibernate:
       ddl-auto: create-drop
